@@ -8,7 +8,7 @@
 	background: #3F51B5 !important;
 	}
 	
-#menu, .submenu {
+#menu {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -30,9 +30,6 @@
     zoom:1;
 }
 
-
-
-
 /* MAIN MENU */
 
 
@@ -47,47 +44,21 @@
 #menu a {
     float: left;
     font-size: 1em;
-    font-family: grlight;
+    font-family: grmedium;
     color: #EAEAEA;
     text-decoration: none;
     margin: 1em 0em 1em 1em;
     line-height: 0;
-    transition: color 0.3s ease-out;
-    
+    transition: color 0.2s ease-out;
 }
 
 #menu li:hover > a {
-    color: #FF80AB;
+    color: #FFFFFF;
 }
 
-/* SUB MENU */
 
-.submenu {
-	border-top: 0.1em solid #FF80AB;
-	display: none;
-	clear: both;
-	float: right;
-}
+/*MEDIA QUERIES*/
 
-.submenu li {
-    float: left;
-}
-
-.submenu a {
-    float: left;
-    font-size: 1em;
-    font-family: grlight;
-    color: #EAEAEA;
-    text-decoration: none;
-    margin: 1em 0em 1em 1em;
-    line-height: 0;
-    transition: color 0.3s ease-out;
-    
-}
-
-.submenu li:hover > a {
-    color: #FF80AB
-}
 
 @media only screen and (max-width: 30em) {
 
