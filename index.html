@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Website Project</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<link rel="stylesheet" type="text/css" href="css/grid.css" />
+<link rel="stylesheet" type="text/css" href="css/slidebars.min.css" />
+<link rel="stylesheet" type="text/css" href="css/responsiveslides.css" />
+<!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+<![endif]-->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/slidebars.min.js"></script>
+<script src="js/responsiveslides.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script>
+  $(function() {
+    $(".rslides").responsiveSlides({
+  auto: true,             // Boolean: Animate automatically, true or false
+  speed: 500,             // Integer: Speed of the transition, in milliseconds
+  timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+  pager: false,           // Boolean: Show pager, true or false
+  nav: false,             // Boolean: Show navigation, true or false
+  random: false,          // Boolean: Randomize the order of the slides, true or false
+  pause: true,            // Boolean: Pause on hover, true or false
+  pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+  prevText: "Previous",   // String: Text for the "previous" button
+  nextText: "Next",       // String: Text for the "next" button
+  maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+  navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+  manualControls: "",     // Selector: Declare custom pager navigation
+  namespace: "rslides",   // String: Change the default namespace used
+  before: function(){},   // Function: Before callback
+  after: function(){}     // Function: After callback
+});
+  });
+</script>
+<script type="text/javascript">
+var ma = ["sub1","sub2"];
+function dropMenu(x){
+	for (var m in ma) {
+		if(ma[m] != x){
+			document.getElementById(ma[m]).style.display = "none";
+		}
+	}
+	if(document.getElementById(x).style.display == "inline"){
+		document.getElementById(x).style.display = "none";
+	} else {
+		document.getElementById(x).style.display = "inline";
+	}
+}
+</script>
+<!--<script type="text/javascript">
+      (function($) {
+        $(document).ready(function() {
+          $.slidebars();
+        });
+      }) (jQuery);
+    </script>
+-->
+    
+</head>
+<body>
+<div id="sb-site">
+
+<div class="menu">
+<div class="extend">
+<div class="container">
+
+<img class="sb-toggle-left" src="images/menu.png" style="height: 1.6em; width: 1.7em;">
+
+<ul id="menu">
+  <li><a href="#">HOME</a></li>
+  <li><a href="#" onclick="return false;" onmousedown="dropMenu('sub1')">TOPIC</a></li>
+  <li><a href="#" onclick="return false;" onmousedown="dropMenu('sub2')">REVIEW</a></li>
+  <li><a href="#">ABOUT</a></li>
+</ul>
+<ul class="submenu" id="sub1" >
+  <li><a href="#">DSLR</a></li>
+  <li><a href="#">GUITAR</a></li>
+  <li><a href="#">PC</a></li>
+</ul>
+<ul class="submenu" id="sub2" >
+  <li><a href="#">Robben Ford</a></li>
+  <li><a href="#">SRV</a></li>
+  <li><a href="#">JH</a></li>
+</ul>
+
+
+</div><!--/ container-->
+</div><!--/ extend-->
+</div><!--/ menu-->
+
+<div onmousedown="dropMenu()">
+
+
+
+<div class="slider">
+<div class="containerfull">
+
+<ul class="rslides">
+  <li><img src="images/wspace1.jpg" alt=""></li>
+  <li><img src="images/wspace2.jpg" alt=""></li>
+  <li><img src="images/wspace3.jpg" alt=""></li>
+</ul>
+
+</div><!--/ containerfull-->
+</div><!--/ slider-->
+
+<div class="extend">
+<div class="container">
+<div class="row">
+<div class="column eight">
+
+<h2> This is just a test! </h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+</p>
+</div><!--/ column--> 
+
+<div class="column eight">
+
+<h2> This is just a test! </h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+</p>
+</div><!--/ column--> 
+
+</div><!--/ row-->
+</div><!--/ container-->
+</div><!--/ extend-->
+
+<div class="extend white">
+<div class="container white">
+<div class="row">
+<div class="column sixteen">
+
+<h2> This is just a test! </h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+</p>
+</div><!--/ column--> 
+</div><!--/ row-->
+</div><!--/ container-->
+</div><!--/ extend-->
+
+
+<div class="extend blue">
+<div class="container blue">
+<div class="row">
+<div class="column sixteen">
+
+<h2> This is just a test! </h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+</p>
+</div><!--/ column--> 
+</div><!--/ row-->
+</div><!--/ container-->
+</div><!--/ extend-->
+
+
+
+<div class="footer">
+<div class="extend">
+<div class="container">
+<p>Designed by Lyoubomir Katzarov</p>
+</div><!--/ container-->
+</div><!--/ extend-->
+</div><!--/ footer-->
+
+</div><!--/ rest of page-->
+</div><!--/ slidebars-->
+
+<div class="sb-slidebar sb-left sb-width-custom" data-sb-width="60%">
+ <p>TETETEE</p>
+</div>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            var swipebars = new $.slidebars({
+                disableClose: true
+            });
+
+            // Left Swipe
+            $(document).hammer().on('swipeleft', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                if ($('html').hasClass('sb-active-left')) {
+                    // The left Slidebar is open, close it.
+                    swipebars.slidebars.close();
+                } else if ($('html').hasClass('sb-active-right')) {
+                    // The right Slidebar is open, do nothing.
+                } else {
+                    // No Slidebar is open, open the right.
+                    swipebars.slidebars.open('right');
+                }
+            });
+
+            // Right Swipe
+            $(document).hammer().on('swiperight', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                if ($('html').hasClass('sb-active-left')) {
+                    // The left Slidebar is open, do nothing.
+                } else if ($('html').hasClass('sb-active-right')) {
+                    // The right Slidebar is open, close it.
+                    swipebars.slidebars.close();
+                } else {
+                    // No Slidebar is open, open the right.
+                    swipebars.slidebars.open('left');
+                }
+            });
+
+            // Tap to Close
+            $('#sb-site').hammer().on('tap', function(event) {
+                if ($('html').hasClass('sb-active-left') || $('html').hasClass('sb-active-right')) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    swipebars.slidebars.close();
+                }
+            });
+        });
+    }) (jQuery);
+</script>
+
+</body>
+</html>

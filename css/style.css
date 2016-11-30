@@ -1,0 +1,99 @@
+
+/*
+
+*/
+
+/* COLORS */
+/* 
+lightest blue #E8EAF6
+light blue #C5CAE9
+blue #3F51B5
+darker blue #303F9F
+black #212121
+
+lightest gray #FAFAFA
+gray #EAEAEA
+text black #212121
+accent pink #FF80AB
+*/
+
+@charset "utf-8";
+@-ms-viewport { width: device-width; }
+
+.clearfix:after,
+.container:after {
+	content: '';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0; height: 0;
+	clear: both;
+	}
+.clearfix,
+.container {
+	zoom: 1;
+	}
+
+/*img, iframe, object, embed, video {
+    width: 100%;
+    max-width: 100%;
+}*/
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	}
+
+@font-face {
+    font-family: grlight;
+	src: url(../font/GothamRounded-Light.ttf);
+        src: url(../font/GothamRounded-Light.woff);
+}
+
+@font-face {
+    font-family: grmedium;
+	src: url(../font/GothamRounded-Medium.ttf);
+        src: url(../font/GothamRounded-Medium.woff);
+}
+
+@font-face {
+    font-family: grbold;
+	src: url(../font/GothamRounded-Bold.ttf);
+        src: url(../font/GothamRounded-Bold.woff);
+}
+
+
+
+body {
+	font-family: grmedium;
+	font-weight: normal;
+	color: #212121;
+	font-size: 100%;
+	line-height: 1.5em;
+	background: #EAEAEA;
+	}
+
+
+h1 { font-size: 1.5em; font-family: grbold; line-height: 1.2em; text-align: center;}
+h2 { font-size: 2em; font-family: grbold; line-height: 1.2em; text-align: center;}
+h3 { font-size: 2.5em; font-family: grbold; line-height: 1.2em; text-align: center;}
+
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+	text-decoration: none;
+}
+
+p { text-align: justify;}
+
+.taleft {text-align: left !important;}
+.taright {text-align: right !important;}
+.tacenter {text-align: center !important;}
+.tajustify {text-align: justify !important;}
+
