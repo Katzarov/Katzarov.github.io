@@ -1,0 +1,86 @@
+
+@charset "utf-8";
+@-ms-viewport { width: device-width; }
+
+.clearfix:after,
+.container:after {
+	content: '';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0; height: 0;
+	clear: both;
+	}
+.clearfix,
+.container {
+	zoom: 1;
+	}
+
+/*img, iframe, object, embed, video {
+    width: 100%;
+    max-width: 100%;
+}*/
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	}
+
+@font-face {
+    font-family: grlight;
+	src: url(../font/GothamRounded-Light.ttf);
+        src: url(../font/GothamRounded-Light.woff);
+}
+
+@font-face {
+    font-family: grmedium;
+	src: url(../font/GothamRounded-Medium.ttf);
+        src: url(../font/GothamRounded-Medium.woff);
+}
+
+@font-face {
+    font-family: grbold;
+	src: url(../font/GothamRounded-Bold.ttf);
+        src: url(../font/GothamRounded-Bold.woff);
+}
+
+
+body {
+	font-family: grlight;
+	font-weight: normal;
+	color: #212121;
+	font-size: 100%;
+	line-height: 1.5em;
+	background: #EAEAEA;
+	}
+
+#arc {
+  text-align: center;
+  background-image: url(../images/arc.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10em auto;
+
+}
+
+h1 { font-size: 1.5em; font-family: grbold; line-height: 1.2em; text-align: center;}
+h2 { font-size: 2em; font-family: grbold; line-height: 1.2em; text-align: center; margin-bottom: 0.4em;}
+h3 { font-size: 2.5em; font-family: grbold; line-height: 1.2em; text-align: center;}
+
+a,
+a:link,
+a:hover,
+a:visited,
+a:active {
+	text-decoration: none;
+}
+
+/*p { text-align: justify;}*/
+
+.taleft {text-align: left !important;}
+.taright {text-align: right !important;}
+.tacenter {text-align: center !important;}
+.tajustify {text-align: justify !important;}
