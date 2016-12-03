@@ -57,49 +57,75 @@ $(document).ready(function() {
     }
   });
 
-
-
-
-    $('#item1').hover(function() {
-      var clicked = false;
-          $(this).addClass('tabmenuhover');
-          $('#item1').on('click', function() {
+/*
+      var clicked1 = false;
+      $('#item1').hover(function() {
             $(this).addClass('tabmenuhover');
-            $('#mode1').hide();
-            clicked = true;
-        });},
-        function() {
-           if (clicked == true) {
-             return false;
-           }
-           else {
-             $(this).removeClass('tabmenuhover');
-        }});
+            $('#item1').on('click', function() {
+              $(this).addClass('tabmenuhover');
+              $('#mode1').hide();
+              clicked1 = true;
 
-     $('#item1').on('click', function() {
-          $(this).addClass('tabmenuhover');
-       $('#mode1').hide();
-     });
+          });},
+          function() {
+             if (clicked1 == true) {
+               return false;
+             }
+             else {
+               $(this).removeClass('tabmenuhover');
+          }});
 
 
+          var clicked2 = false;
+          $('#item2').hover(function() {
+                $(this).addClass('tabmenuhover');
+                $('#item2').on('click', function() {
+                  $(this).addClass('tabmenuhover');
+                  $('#mode1').hide();
+                  clicked2 = true;
+              });},
+              function() {
+                 if (clicked2 == true) {
+                   return false;
+                 }
+                 else {
+                   $(this).removeClass('tabmenuhover');
+              }});
 
-     $('#item2').hover(function() {
-            $(this).addClass('tabmenuhover');
-        }, function() {
-            $(this).removeClass('tabmenuhover');
-        }
-      );
+
+              $('#item3').hover(function() {
+                     $(this).addClass('tabmenuhover');
+                 }, function() {
+                     $(this).removeClass('tabmenuhover');
+                 }
+               );
+
+
+*/
+
+  $('#item1').on('click', function() {
+      $('#mode1').hide();
+      $('#mode2').hide();
+      $('#footer').hide();
+      $('#theory').show();
+    });
+
+    $('#item2').on('click', function() {
+        $('#theory').hide();
+        $('#mode2').hide();
+        $('#footer').show();
+        $('#mode1').show();
+      });
+
+      $('#item3').on('click', function() {
+          $('#theory').hide();
+          $('#mode1').hide();
+          $('#footer').show();
+          $('#mode2').show();
+        });
 
 
 
 
-
-
-      $('#item3').hover(function() {
-             $(this).addClass('tabmenuhover');
-         }, function() {
-             $(this).removeClass('tabmenuhover');
-         }
-       );
 
 });
