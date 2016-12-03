@@ -98,10 +98,20 @@ a:active {
 	font-size: 1.3em;
 	padding: 0em 0em 0em 0em;
 
+
 }
 
 .tabmenuhover {
   color: #FFFFFF;
-  background: #303F9F;
+	transition: background-color 0.5s ease;
+  background-color: #303F9F;
+
+}
+
+
+#arc {
+	font-size: 3em;
+	font-family: grmedium;
+  color: #212121;
 
 }

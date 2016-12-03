@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
-  $('#main').css('height', $(window).height()-$('#tabmenu').height()-$('#footer').height());
+  $('#main').css('height', $(window).height()-$('.tabmenu').height()-$('#footer').height());
+  //  $('#arc').css('left', $(window).width()/2);
   // define variables
   var random = Math.floor((Math.random() * 36) + 1);
   var audioElement = document.createElement('audio');
@@ -56,12 +57,31 @@ $(document).ready(function() {
     }
   });
 
+
+
+
     $('#item1').hover(function() {
-           $(this).addClass('tabmenuhover');
-       }, function() {
-           $(this).removeClass('tabmenuhover');
-       }
-     );
+      var clicked = false;
+          $(this).addClass('tabmenuhover');
+          $('#item1').on('click', function() {
+            $(this).addClass('tabmenuhover');
+            $('#mode1').hide();
+            clicked = true;
+        });},
+        function() {
+           if (clicked == true) {
+             return false;
+           }
+           else {
+             $(this).removeClass('tabmenuhover');
+        }});
+
+     $('#item1').on('click', function() {
+          $(this).addClass('tabmenuhover');
+       $('#mode1').hide();
+     });
+
+
 
      $('#item2').hover(function() {
             $(this).addClass('tabmenuhover');
@@ -69,6 +89,11 @@ $(document).ready(function() {
             $(this).removeClass('tabmenuhover');
         }
       );
+
+
+
+
+
 
       $('#item3').hover(function() {
              $(this).addClass('tabmenuhover');

@@ -10,12 +10,19 @@
 </head>
 
 <body>
+<!--
+<div id="arc" style="position: absolute; top: 2em;">
+  <div id="p8"> P8 </div>
+  <div id="p5"> P5 </div>
+  <div id="p4"> P4 </div>
 
+</div> -->
 
+  <div class="tabmenu">
   <div class="extend blue" style="border-bottom: solid 0.2em #FF80AB;">
   <div class="container blue">
   <div class="row">
-  <div class="tabmenu">
+
 
   <div id="item1" class="column tt tacenter">
   THEORY
@@ -41,34 +48,38 @@
 <div id="main">
 <div class="extend">
 <div class="container">
+
+<div id="mode1">
+
 <div class="row">
-<div class="column eight tacenter">
+<div class="column eight pushfour taright">
+
 
 
   <span id="counter">  </span>
-
   <span id="correct">  </span>
-
-  <div id="arc" style="">
-    <img src="images/arc.png" style="position: absolute; width: 10em; height: auto;">
-    <div id="p8" style="position: relative; margin-left: 9.5em;"> P8 </div>
-    <div style="position: relative; padding-top: 2em;">
-    <span id="p5" style="position: relative; margin-left: 7em;"> P5 </span>
-    <span id="p4"> P4 </span></div>
-  </div>
-
-<!--
-  <div id="arc" style="">
-    <div id="p8" style="padding-bottom: 2.5em; margin-right: 0.5em;"> P8 </div>
-    <div style="padding-bottom: 1.3em;">
-    <span id="p5" style="margin-right: 3em;"> P5 </span>
-    <span id="p4"> P4 </span></div>
-  </div>
-
--->
 
 </div><!--/ column-->
 </div><!--/ row-->
+
+<div class="row">
+<div class="column eight pushfour" style="background-image: url(images/arc.png); background-size: cover;">
+
+
+  <div id="arc">
+    <div id="p8" class="column eight pushfour tacenter"> P8 </div>
+
+        <div class="row" style="padding-top: 5em; padding-bottom: 2em;">
+        <div id="p5" style="float: left;"> P5 </div>
+        <div id="p4" style="float: right;"> P4 </div>
+        </div><!--/ row-->
+  </div>
+
+</div><!--/ column-->
+</div><!--/ row-->
+
+</div><!--/ mode1-->
+
 </div><!--/ container-->
 </div><!--/ extend-->
 </div><!--/ main-->
@@ -78,8 +89,13 @@
 <div id="footer">
 <div class="extend">
 <div class="container">
-  <span id="play">  play  </span>
-  <span id="next"> next  </span>
+<div class="row">
+
+  <div class="column four pushfour tacenter" id="play">  play  </div>
+
+  <div class="column four tecenter" id="next"> next  </div>
+
+</div><!--/ row-->
 </div><!--/ container-->
 </div><!--/ extend-->
 </div><!--/ footer-->
