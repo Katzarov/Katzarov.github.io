@@ -90,6 +90,13 @@ a:active {
 .tajustify {text-align: justify !important;}
 
 
+a:hover div {
+
+	color: #FFFFFF;
+	transition: background-color 0.5s ease;
+  background-color: #303F9F;
+}
+
 
 .tabmenu {
 	color: #EAEAEA;
