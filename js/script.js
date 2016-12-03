@@ -104,27 +104,34 @@ $(document).ready(function() {
 */
 
   $('#item1').on('click', function() {
+      $('#item1').addClass('tabmenuhover');
+      $('#item2').removeClass('tabmenuhover');
+      $('#item3').removeClass('tabmenuhover');
       $('#mode1').hide();
       $('#mode2').hide();
       $('#footer').hide();
       $('#theory').show();
     });
 
-    $('#item2').on('click', function() {
-        $('#theory').hide();
-        $('#mode2').hide();
-        $('#footer').show();
-        $('#mode1').show();
-      });
+  $('#item2').on('click', function() {
+      $('#item2').addClass('tabmenuhover');
+      $('#item1').removeClass('tabmenuhover');
+      $('#item3').removeClass('tabmenuhover');
+      $('#theory').hide();
+      $('#mode2').hide();
+      $('#footer').show();
+      $('#mode1').show();
+    });
 
-      $('#item3').on('click', function() {
-          $('#theory').hide();
-          $('#mode1').hide();
-          $('#footer').show();
-          $('#mode2').show();
-        });
-
-
+  $('#item3').on('click', function() {
+      $('#item3').addClass('tabmenuhover');
+      $('#item1').removeClass('tabmenuhover');
+      $('#item2').removeClass('tabmenuhover');
+      $('#theory').hide();
+      $('#mode1').hide();
+      $('#footer').show();
+      $('#mode2').show();
+    });
 
 
 

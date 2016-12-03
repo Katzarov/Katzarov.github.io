@@ -103,8 +103,9 @@ a:hover div {
 	font-family: grlight;
 	font-weight: normal;
 	font-size: 1.3em;
+	white-space: nowrap;
 	padding: 0em 0em 0em 0em;
-
+	transition: background-color 0.5s ease;
 
 }
 
