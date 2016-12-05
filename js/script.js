@@ -1,6 +1,13 @@
 
 $(document).ready(function() {
-  $('#main').css('height', $(window).height()-$('.tabmenu').height()-$('#footer').height());
+  $('#main').css('height', $(window).height()-$('.tabmenu').height()-$('.footer').height());
+
+  var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+  if (isTouch) {
+    $('body').removeClass('desktop');
+  }
+
+
   //$('#arc').css('left', $(window).width()/2);
   // define variables
   var random = Math.floor((Math.random() * 36) + 1);
@@ -80,7 +87,7 @@ $(document).ready(function() {
 $('#item1').addClass('tabmenuhover');
 $('#mode1').hide();
 $('#mode2').hide();
-$('#footer').hide();
+$('.footer').hide();
 
 
   $('#item1').on('click', function() {
@@ -89,7 +96,7 @@ $('#footer').hide();
       $('#item3').removeClass('tabmenuhover');
       $('#mode1').hide();
       $('#mode2').hide();
-      $('#footer').hide();
+      $('.footer').hide();
       $('#theory').fadeIn(250);
     });
 
@@ -99,7 +106,7 @@ $('#footer').hide();
       $('#item3').removeClass('tabmenuhover');
       $('#theory').hide();
       $('#mode2').hide();
-      $('#footer').fadeIn(250);
+      $('.footer').fadeIn(250);
       $('#mode1').fadeIn(250);
     });
 
@@ -109,7 +116,7 @@ $('#footer').hide();
       $('#item2').removeClass('tabmenuhover');
       $('#theory').hide();
       $('#mode1').hide();
-      $('#footer').fadeIn(250);
+      $('.footer').fadeIn(250);
       $('#mode2').fadeIn(250);
     });
 
