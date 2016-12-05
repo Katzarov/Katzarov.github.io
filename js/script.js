@@ -23,7 +23,7 @@ $(document).ready(function() {
 
   $('#play').on('click', function() {
 
-  $('#play').addClass('footerhover').delay(400).queue(function(next){
+  $('#play').addClass('footerhover').delay(300).queue(function(next){
       $('#play').removeClass('footerhover');
       next();
   });

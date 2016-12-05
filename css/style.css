@@ -125,7 +125,7 @@ a:active {
 
 .footerhover {
 	transition: 0.2s ease;
-	background-color:  red;
+	background-color: #EAEAEA;
 }
 
 .desktop .footer a:hover div {
