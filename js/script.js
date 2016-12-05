@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
   $('#main').css('height', $(window).height()-$('.tabmenu').height()-$('#footer').height());
-  //  $('#arc').css('left', $(window).width()/2);
+  //$('#arc').css('left', $(window).width()/2);
   // define variables
   var random = Math.floor((Math.random() * 36) + 1);
   var audioElement = document.createElement('audio');
@@ -9,10 +9,10 @@ $(document).ready(function() {
   //audioElement.play();
 
   var counter = 1;
-  $('#counter').text(counter + '/50');
+  $('#counter').text('Question: ' + counter + '/50');
 
   var correct = 0;
-  $('#correct').text(correct + '/' + counter);
+  $('#correct').text('| Correct: ' + correct + '/' + counter);
 
   $('#play').on('click', function() {
   // plays the interval
@@ -22,86 +22,66 @@ $(document).ready(function() {
 
   $('#next').on('click', function() {
   counter = counter + 1;
-  $('#counter').text(counter + '/50');
-  $('#correct').text(correct + '/' + counter);
+  $('#counter').text('Question: ' + counter + '/50');
+  $('#correct').text('| Correct: ' + correct + '/' + counter);
   // selects random a random interval
   random = Math.floor((Math.random() * 36) + 1);
   audioElement.setAttribute('src', 'tracks/' + random + '.mp3');
   audioElement.play();
+  firsttry = true;
   });
 
+  var firsttry = true;
   $('#p4').on('click', function() {
   // perfect fourth
     if (random % 3 == 1) {
-        $('body').append('Good Job' + random);
+        if (firsttry == true) {
+        $('body').append('Good Job!' + random);
+        correct = correct +1;
+      } else {
+        $('body').append('Correct' + random);
+      }
     } else {
-        $('body').append('Wrong' + random);
+        $('body').append('Try Again' + random);
+        firsttry = false;
     }
   });
 
   $('#p5').on('click', function() {
   // perfect fifth
     if (random % 3 == 2) {
-        $('body').append('Good Job' + random);
+      if (firsttry == true) {
+      $('body').append('Good Job!' + random);
+      correct = correct +1;
     } else {
-        $('body').append('Wrong' + random);
+      $('body').append('Correct' + random);
+    }
+  } else {
+      $('body').append('Try Again' + random);
+      firsttry = false;
     }
   });
 
   $('#p8').on('click', function() {
     // octave
     if (random % 3 == 0) {
-        $('body').append('Good Job' + random);
+      if (firsttry == true) {
+      $('body').append('Good Job!' + random);
+      correct = correct +1;
     } else {
-        $('body').append('Wrong' + random);
+      $('body').append('Correct' + random);
+    }
+  } else {
+      $('body').append('Try Again' + random);
+      firsttry = false;
     }
   });
 
-/*
-      var clicked1 = false;
-      $('#item1').hover(function() {
-            $(this).addClass('tabmenuhover');
-            $('#item1').on('click', function() {
-              $(this).addClass('tabmenuhover');
-              $('#mode1').hide();
-              clicked1 = true;
+$('#item1').addClass('tabmenuhover');
+$('#mode1').hide();
+$('#mode2').hide();
+$('#footer').hide();
 
-          });},
-          function() {
-             if (clicked1 == true) {
-               return false;
-             }
-             else {
-               $(this).removeClass('tabmenuhover');
-          }});
-
-
-          var clicked2 = false;
-          $('#item2').hover(function() {
-                $(this).addClass('tabmenuhover');
-                $('#item2').on('click', function() {
-                  $(this).addClass('tabmenuhover');
-                  $('#mode1').hide();
-                  clicked2 = true;
-              });},
-              function() {
-                 if (clicked2 == true) {
-                   return false;
-                 }
-                 else {
-                   $(this).removeClass('tabmenuhover');
-              }});
-
-
-              $('#item3').hover(function() {
-                     $(this).addClass('tabmenuhover');
-                 }, function() {
-                     $(this).removeClass('tabmenuhover');
-                 }
-               );
-
-
-*/
 
   $('#item1').on('click', function() {
       $('#item1').addClass('tabmenuhover');
@@ -110,7 +90,7 @@ $(document).ready(function() {
       $('#mode1').hide();
       $('#mode2').hide();
       $('#footer').hide();
-      $('#theory').show();
+      $('#theory').fadeIn(250);
     });
 
   $('#item2').on('click', function() {
@@ -119,8 +99,8 @@ $(document).ready(function() {
       $('#item3').removeClass('tabmenuhover');
       $('#theory').hide();
       $('#mode2').hide();
-      $('#footer').show();
-      $('#mode1').show();
+      $('#footer').fadeIn(250);
+      $('#mode1').fadeIn(250);
     });
 
   $('#item3').on('click', function() {
@@ -129,10 +109,15 @@ $(document).ready(function() {
       $('#item2').removeClass('tabmenuhover');
       $('#theory').hide();
       $('#mode1').hide();
-      $('#footer').show();
-      $('#mode2').show();
+      $('#footer').fadeIn(250);
+      $('#mode2').fadeIn(250);
     });
 
+
+    $("#wc").text("New word");
+    $("#wc").text("New word2");
+    $('#wc').css('left', $(window).width()/2);
+    $('#wc').css('top', $('#mode1').height()/2);
 
 
 });

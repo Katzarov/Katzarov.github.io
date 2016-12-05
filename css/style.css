@@ -123,3 +123,7 @@ a:hover div {
   color: #212121;
 
 }
+
+#wc {
+	position: absolute;
+}
