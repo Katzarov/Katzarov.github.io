@@ -2,6 +2,8 @@
 $(document).ready(function() {
   $('#main').css('height', $(window).height()-$('.tabmenu').height()-$('.footer').height());
 
+  window.onresize = function(){ location.reload(); }
+
   var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
   if (isTouch) {
     $('body').removeClass('desktop');
@@ -51,13 +53,13 @@ $(document).ready(function() {
   // perfect fourth
     if (random % 3 == 1) {
         if (firsttry == true) {
-        $('body').append('Good Job!' + random);
+        $("#wc").text('Good Job!');
         correct = correct +1;
       } else {
-        $('body').append('Correct' + random);
+        $("#wc").text('Correct');
       }
     } else {
-        $('body').append('Try Again' + random);
+        $("#wc").text('Try Again!');
         firsttry = false;
     }
   });
@@ -66,13 +68,13 @@ $(document).ready(function() {
   // perfect fifth
     if (random % 3 == 2) {
       if (firsttry == true) {
-      $('body').append('Good Job!' + random);
+      $("#wc").text('Good Job!');
       correct = correct +1;
     } else {
-      $('body').append('Correct' + random);
+      $("#wc").text('Correct');
     }
   } else {
-      $('body').append('Try Again' + random);
+      $("#wc").text('Try Again!');
       firsttry = false;
     }
   });
@@ -81,13 +83,13 @@ $(document).ready(function() {
     // octave
     if (random % 3 == 0) {
       if (firsttry == true) {
-      $('body').append('Good Job!' + random);
+      $("#wc").text('Good Job!');
       correct = correct +1;
     } else {
-      $('body').append('Correct' + random);
+      $("#wc").text('Correct');
     }
   } else {
-      $('body').append('Try Again' + random);
+      $("#wc").text('Try Again!');
       firsttry = false;
     }
   });
@@ -129,19 +131,17 @@ $('.footer').hide();
     });
 
 
+    $('#wc').css('left', $(window).width()/2 - 30);
+    $('#wc').css('top', $('.tabmenu').height() + $('#mode1').height()/2);
 
-    $('#play').on('click', function() {
+    $('#p8').css('left', $(window).width()/2 - 20);
+    $('#p8').css('top', $('.tabmenu').height() + 60);
+
+    $('#p4').css('left', $(window).width()/2 + 100);
+    $('#p4').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
 
 
-      });
-
-
-
-
-    $("#wc").text("New word");
-    $("#wc").text("New word2");
-    $('#wc').css('left', $(window).width()/2);
-    $('#wc').css('top', $('#mode1').height()/2);
-
+    $('#p5').css('left', $(window).width()/2 - 120);
+    $('#p5').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
 
 });
