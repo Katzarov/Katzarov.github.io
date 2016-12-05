@@ -123,6 +123,11 @@ a:active {
 
 }
 
+.footerhover {
+	transition: 0.2s ease;
+	background-color:  red;
+}
+
 .desktop .footer a:hover div {
 
 	transition: background-color 0.5s ease;

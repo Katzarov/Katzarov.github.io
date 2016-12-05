@@ -22,9 +22,17 @@ $(document).ready(function() {
   $('#correct').text('| Correct: ' + correct + '/' + counter);
 
   $('#play').on('click', function() {
+
+  $('#play').addClass('footerhover').delay(400).queue(function(next){
+      $('#play').removeClass('footerhover');
+      next();
+  });
+
+
   // plays the interval
   audioElement.play();
   });
+
 
 
   $('#next').on('click', function() {
@@ -119,6 +127,15 @@ $('.footer').hide();
       $('.footer').fadeIn(250);
       $('#mode2').fadeIn(250);
     });
+
+
+
+    $('#play').on('click', function() {
+
+
+      });
+
+
 
 
     $("#wc").text("New word");
