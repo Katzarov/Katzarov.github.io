@@ -9,13 +9,11 @@
 
 	}
 
-
 .row {
 	float: left;
 	clear: both;
 	width: 100%;
 	}
-
 
 .container {
 	max-width: 75em;
@@ -23,11 +21,10 @@
 	padding: 0em 0em 0em 0em;
 	}
 
-
 .column {
 	float: left;
 	padding: 0.7em 1em 0.7em 1em;
-        }
+  }
 
 .white {
 	background: #FAFAFA !important;
@@ -135,6 +132,6 @@
 .column {
 	float: left;
 	padding: 0.5em 0.7em 0.5em 0.7em;
-        }
+  }
 
 }

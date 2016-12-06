@@ -56,7 +56,6 @@ accent pink #FF80AB
         src: url(../font/GothamRounded-Bold.woff);
 }
 
-
 body {
 	font-family: grlight;
 	font-weight: normal;
@@ -78,21 +77,13 @@ a:active {
 	text-decoration: none;
 }
 
-/*p { text-align: justify;}*/
 
 .taleft {text-align: left !important;}
 .taright {text-align: right !important;}
 .tacenter {text-align: center !important;}
 .tajustify {text-align: justify !important;}
 
-
-.desktop .tabmenu a:hover div {
-
-	color: #FFFFFF;
-	transition: background-color 0.5s ease;
-  background-color: #303F9F;
-}
-
+/* TAB MENU */
 
 .tabmenu {
 	color: #EAEAEA;
@@ -102,15 +93,24 @@ a:active {
 	white-space: nowrap;
 	padding: 0em 0em 0em 0em;
 	transition: background-color 0.5s ease;
-
 }
 
+.desktop .tabmenu a:hover div {
+
+	color: #FFFFFF;
+	transition: background-color 0.5s ease;
+  background-color: #303F9F;
+}
+
+/* gets activated by jQuery */
 .tabmenuhover {
   color: #FFFFFF;
 	transition: background-color 0.5s ease;
   background-color: #303F9F;
 
 }
+
+/* FOOTER BUTTONS */
 
 .footer {
 	font-family: grlight;
@@ -119,18 +119,19 @@ a:active {
 
 }
 
-.footerhover {
-	transition: 0.2s ease;
-	background-color: #EAEAEA;
-}
-
 .desktop .footer a:hover div {
 
 	transition: background-color 0.5s ease;
   background-color: #EAEAEA;
 }
 
+/* gets activated by jQuery */
+.footerhover {
+	transition: 0.2s ease;
+	background-color: #EAEAEA;
+}
 
+/* ARC BUTTONS */
 
 .arc {
 	font-size: 3em;
@@ -140,7 +141,6 @@ a:active {
 
 .arc a div {
 	padding: 0.3em;
-	border: 1px #444444 solid;
   border-radius: 1em;
 	-webkit-border-radius: 1em;
 	-moz-border-radius: 1em;
@@ -151,6 +151,7 @@ a:active {
 	background-color: white;
 }
 
+/* gets activated by jQuery */
 .archover {
 	transition: background-color 0.2s ease;
 	background-color: white;
