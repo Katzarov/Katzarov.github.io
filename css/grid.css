@@ -50,6 +50,10 @@
 .column.tt { width: 33%; }
 .column.tf { width: 34%; }
 
+.column.image { width: 50%; }
+.column.pushimage { margin-left: 25%; }
+
+
 .column.one { width: 6.25%; }
 .column.two { width: 12.5%; }
 .column.three { width: 18.75%; }
@@ -88,7 +92,6 @@
 
 /*MEDIA QUERIES*/
 
-
 @media only screen and (max-width: 50em) {
 
 .column.one { width: 100%; }
@@ -126,9 +129,12 @@
 .column.pushfifteen { margin-left: 0%; }
 .column.pushsixteen { margin-left: 0%; }
 
+.column.image { width: 90%; }
+.column.pushimage { margin-left: 5%; }
+
 .column {
 	float: left;
-	padding: 0.5em 0.5em 0.5em 0.5em;
+	padding: 0.5em 0.7em 0.5em 0.7em;
         }
 
 }

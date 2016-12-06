@@ -203,10 +203,10 @@ $(document).ready(function() {
   $('#p8').css('left', $(window).width()/2 - 40);
   $('#p8').css('top', $('.tabmenu').height() + 60);
   // p4 button
-  $('#p4').css('left', $(window).width()/2 + 80);
-  $('#p4').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
+  $('#p4').css('left', $(window).width()/2 + 50);
+  $('#p4').css('top', $('.tabmenu').height() + $('#mode1').height() - 120);
   // p5 button
-  $('#p5').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
+  $('#p5').css('top', $('.tabmenu').height() + $('#mode1').height() - 120);
   $('#p5').css('left', $(window).width()/2 - 120);
 
 });
