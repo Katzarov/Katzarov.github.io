@@ -129,6 +129,7 @@ $(document).ready(function() {
     if (random % 3 == 1) {
         if (firsttry == true) {
           correct = correct +1;
+          stats();
           wcOut('Perfect!', 'green');
         } else {
           wcOut('Correct', 'orange');
@@ -145,6 +146,7 @@ $(document).ready(function() {
     if (random % 3 == 2) {
       if (firsttry == true) {
         correct = correct +1;
+        stats();
         wcOut('Perfect!', 'green');
       } else {
         wcOut('Correct', 'orange');
@@ -161,6 +163,7 @@ $(document).ready(function() {
     if (random % 3 == 0) {
       if (firsttry == true) {
         correct = correct +1;
+        stats();
         wcOut('Perfect!', 'green');
       } else {
         wcOut('Correct', 'orange');
