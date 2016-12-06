@@ -71,16 +71,14 @@ $(document).ready(function() {
 
   // play button
   $('#play').on('click', function() {
-    $('#play').addClass('footerhover').delay(300).queue(function(next){
-        $('#play').removeClass('footerhover');
-        next();
-    });
+    hoverDelay(this, 'footerhover', 300);
     // plays the interval
     audioElement.play();
   });
 
   // next button
   $('#next').on('click', function() {
+    hoverDelay(this, 'footerhover', 300);
     if (counter == 50) {
       reset ();
     } else {
@@ -94,7 +92,10 @@ $(document).ready(function() {
   }});
 
   // reset button
-  $('#reset').on('click', reset);
+  $('#reset').on('click', function() {
+    hoverDelay(this, 'footerhover', 300);
+    reset();
+  });
 
   // resets the stats
   function reset() {
@@ -124,6 +125,7 @@ $(document).ready(function() {
   // the user gets the appropriate feedback
   // p4 button
   $('#p4').on('click', function() {
+    hoverDelay(this, 'archover', 300)
     if (random % 3 == 1) {
         if (firsttry == true) {
           correct = correct +1;
@@ -139,6 +141,7 @@ $(document).ready(function() {
 
   // p5 button
   $('#p5').on('click', function() {
+    hoverDelay(this, 'archover', 300)
     if (random % 3 == 2) {
       if (firsttry == true) {
         correct = correct +1;
@@ -154,6 +157,7 @@ $(document).ready(function() {
 
   // p8 button
   $('#p8').on('click', function() {
+    hoverDelay(this, 'archover', 300)
     if (random % 3 == 0) {
       if (firsttry == true) {
         correct = correct +1;
@@ -166,6 +170,14 @@ $(document).ready(function() {
         wcOut('Try Again!', 'red');
         }
   });
+
+  // toggles between classes resembling hover effect
+  function hoverDelay(elem, hover, time) {
+    $(elem).clearQueue().addClass(hover).delay(time).queue(function(next){
+        $(elem).removeClass(hover);
+        next();
+    });
+  }
 
   // draws the corresponding feedback to the user
   function wcOut(text, color) {
@@ -188,10 +200,10 @@ $(document).ready(function() {
   $('#wc').css('left', $(window).width()/2 - 80);
   $('#wc').css('top', $('.tabmenu').height() + $('#mode1').height()/2);
   // p8 button
-  $('#p8').css('left', $(window).width()/2 - 20);
+  $('#p8').css('left', $(window).width()/2 - 40);
   $('#p8').css('top', $('.tabmenu').height() + 60);
   // p4 button
-  $('#p4').css('left', $(window).width()/2 + 100);
+  $('#p4').css('left', $(window).width()/2 + 80);
   $('#p4').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
   // p5 button
   $('#p5').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
