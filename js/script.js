@@ -9,13 +9,12 @@ $(document).ready(function() {
   // position foooter (tab buttons)
   $('#main').css('height', $(window).height() - $('.tabmenu').height() - $('.footer').height());
 
-  // on window resize set the new positions of the above elements
-  //window.onresize = function(){ location.reload(); }
-
-  // if a mobile device is present this disables the css hover class
+  // if a mobile device is present this disables the css hover class and the window resize
   var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
   if (isTouch) {
     $('body').removeClass('desktop');
+    // on window resize set the new positions of the above elements
+    window.onresize = function(){ location.reload(); }
   }
 
   // some defaults
