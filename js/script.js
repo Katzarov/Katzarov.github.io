@@ -10,7 +10,7 @@ $(document).ready(function() {
   $('#main').css('height', $(window).height() - $('.tabmenu').height() - $('.footer').height());
 
   // on window resize set the new positions of the above elements
-  window.onresize = function(){ location.reload(); }
+  //window.onresize = function(){ location.reload(); }
 
   // if a mobile device is present this disables the css hover class
   var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
