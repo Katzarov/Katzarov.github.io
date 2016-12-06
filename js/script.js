@@ -1,127 +1,166 @@
-
 $(document).ready(function() {
-  $('#main').css('height', $(window).height()-$('.tabmenu').height()-$('.footer').height());
 
+  ///////////////////////
+  /* POSITION ELEMENTS */
+  ///////////////////////
+
+  // foooter (tab buttons)
+  $('#main').css('height', $(window).height() - $('.tabmenu').height() - $('.footer').height());
+  // wrong - correct feedback popup
+
+
+  // on window resize set the new positions of the above elements
   window.onresize = function(){ location.reload(); }
 
+  // if a mobile device is present this disables the css hover class
   var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
   if (isTouch) {
     $('body').removeClass('desktop');
   }
 
+  ////////////////
+  /* MAIN LOGIC */
+  ////////////////
 
-  //$('#arc').css('left', $(window).width()/2);
+
   // define variables
+  var counter = 1; // count of passed questions
+  var correct = 0; // count of correct answers
+  var firsttry = true; // did the user get it right the first time
   var random = Math.floor((Math.random() * 36) + 1);
+  // gets a random number that corresponds to a certain interval
+  // intervals are prerecorded so one random numer gets you a ready to use interval
   var audioElement = document.createElement('audio');
   audioElement.setAttribute('src', 'tracks/' + random + '.mp3');
-  //audioElement.play();
+  // draw the current stats of the game (questions and answers)
+  stats();
 
-  var counter = 1;
-  $('#counter').text('Question: ' + counter + '/50');
 
-  var correct = 0;
-  $('#correct').text('| Correct: ' + correct + '/' + counter);
+  ////////////////////
+  /* FOOTER BUTTONS */
+  ////////////////////
 
+
+  // play button
   $('#play').on('click', function() {
-
-  $('#play').addClass('footerhover').delay(300).queue(function(next){
-      $('#play').removeClass('footerhover');
-      next();
+    $('#play').addClass('footerhover').delay(300).queue(function(next){
+        $('#play').removeClass('footerhover');
+        next();
+    });
+    // plays the interval
+    audioElement.play();
   });
 
-
-  // plays the interval
-  audioElement.play();
-  });
-
-
-
+  // next button
   $('#next').on('click', function() {
-  counter = counter + 1;
-  $('#counter').text('Question: ' + counter + '/50');
-  $('#correct').text('| Correct: ' + correct + '/' + counter);
-  // selects random a random interval
-  random = Math.floor((Math.random() * 36) + 1);
-  audioElement.setAttribute('src', 'tracks/' + random + '.mp3');
-  audioElement.play();
-  firsttry = true;
-  });
+    if (counter == 50) {
+      reset ();
+    } else {
+      counter = counter + 1;
+      stats();
+      // selects random a random interval
+      random = Math.floor((Math.random() * 36) + 1);
+      audioElement.setAttribute('src', 'tracks/' + random + '.mp3');
+      audioElement.play();
+      firsttry = true;
+  }});
 
-$('#wc').hide();
-  var firsttry = true;
+  // reset button
+  $('#reset').on('click', reset);
+
+  // resets the stats
+  function reset() {
+    counter = 1;
+    correct = 0;
+    stats();
+    // selects random a random interval
+    random = Math.floor((Math.random() * 36) + 1);
+    audioElement.setAttribute('src', 'tracks/' + random + '.mp3');
+    audioElement.play();
+    firsttry = true;
+  }
+
+
+
+  // draws the current stats of the game (questions and answers)
+  function stats() {
+    $('#counter').text('Question: ' + counter + '/50');
+    $('#correct').text('| Correct: ' + correct + '/' + counter);
+  }
+
+
+  /////////////////
+  /* ARC BUTTONS */
+  /////////////////
+
+  // p4 button
+  // if the user clicked this button and the interval is right
+  // the user gets the appropriate feedback
   $('#p4').on('click', function() {
-  // perfect fourth
     if (random % 3 == 1) {
         if (firsttry == true) {
-        $("#wc").text('Good Job!');
-        correct = correct +1;
-        $('#wc').css('color', 'green');
-        $('#wc').clearQueue().fadeIn(100).delay(1000).queue(function(next){
-            $('#wc').fadeOut(100);
-            next();
-        });
-
-      } else {
-        $("#wc").text('Correct');
-        $('#wc').css('color', 'yellow');
-        $('#wc').clearQueue().fadeIn(100).delay(1000).queue(function(next){
-            $('#wc').fadeOut(100);
-            next();
-        });
-      }
-    } else {
-        $("#wc").text('Try Again!');
-        firsttry = false;
-        $('#wc').css('color', 'red');
-        $('#wc').clearQueue().fadeIn(100).delay(1000).queue(function(next){
-            $('#wc').fadeOut(100);
-            next();
-        });
-    }
+          correct = correct +1;
+          wcOut('Perfect!', 'green');
+        } else {
+          wcOut('Correct', 'yellow');
+          }
+        } else {
+          firsttry = false;
+          wcOut('Try Again!', 'red');
+          }
   });
 
+  // p5 button
   $('#p5').on('click', function() {
-  // perfect fifth
     if (random % 3 == 2) {
       if (firsttry == true) {
-      $("#wc").text('Good Job!');
-      correct = correct +1;
-    } else {
-      $("#wc").text('Correct');
-    }
-  } else {
-      $("#wc").text('Try Again!');
-      firsttry = false;
-    }
+        correct = correct +1;
+        wcOut('Perfect!', 'green');
+      } else {
+        wcOut('Correct', 'yellow');
+        }
+      } else {
+        firsttry = false;
+        wcOut('Try Again!', 'red');
+        }
   });
 
+  // p8 button
   $('#p8').on('click', function() {
-    // octave
     if (random % 3 == 0) {
       if (firsttry == true) {
-      $("#wc").text('Good Job!');
-      correct = correct +1;
-    } else {
-      $("#wc").text('Correct');
-    }
-  } else {
-      $("#wc").text('Try Again!');
-      firsttry = false;
-    }
+        correct = correct +1;
+        wcOut('Perfect!', 'green');
+      } else {
+        wcOut('Correct', 'yellow');
+        }
+      } else {
+        firsttry = false;
+        wcOut('Try Again!', 'red');
+        }
   });
+
+  // draws the corresponding feedback to the user
+  function wcOut(text, color) {
+    $("#wc").text(text);
+    $('#wc').css('color', color);
+    // clears the queue to avoid buildup is user spams the button
+    $('#wc').clearQueue().fadeIn(100).delay(1000).queue(function(next){
+        $('#wc').fadeOut(100);
+        next();
+    });
+  }
+
 
   $('#item1').addClass('tabmenuhover');
   $('#mode1').hide();
-  $('#mode2').hide();
   $('.footer').hide();
+
 
   $('#item1').on('click', function() {
       $('#item1').addClass('tabmenuhover');
       $('#item2').removeClass('tabmenuhover');
-      $('#item3').removeClass('tabmenuhover');
       $('#mode1').hide();
-      $('#mode2').hide();
       $('.footer').hide();
       $('#theory').fadeIn(250);
     });
@@ -129,35 +168,22 @@ $('#wc').hide();
   $('#item2').on('click', function() {
       $('#item2').addClass('tabmenuhover');
       $('#item1').removeClass('tabmenuhover');
-      $('#item3').removeClass('tabmenuhover');
       $('#theory').hide();
-      $('#mode2').hide();
       $('.footer').fadeIn(250);
       $('#mode1').fadeIn(250);
-    });
-
-  $('#item3').on('click', function() {
-      $('#item3').addClass('tabmenuhover');
-      $('#item1').removeClass('tabmenuhover');
-      $('#item2').removeClass('tabmenuhover');
-      $('#theory').hide();
-      $('#mode1').hide();
-      $('.footer').fadeIn(250);
-      $('#mode2').fadeIn(250);
     });
 
 
     $('#wc').css('left', $(window).width()/2 - 80);
     $('#wc').css('top', $('.tabmenu').height() + $('#mode1').height()/2);
-
+    // p8 button
     $('#p8').css('left', $(window).width()/2 - 20);
     $('#p8').css('top', $('.tabmenu').height() + 60);
-
+    // p4 button
     $('#p4').css('left', $(window).width()/2 + 100);
     $('#p4').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
-
-
-    $('#p5').css('left', $(window).width()/2 - 120);
+    // p5 button
     $('#p5').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
+    $('#p5').css('left', $(window).width()/2 - 120);
 
 });

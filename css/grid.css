@@ -61,6 +61,8 @@
 	padding-bottom: 0.5em;
 	}
 */
+.column.it1 { width: 50%; }
+.column.it2 { width: 50%; }
 
 .column.tt { width: 33%; }
 .column.tf { width: 34%; }
