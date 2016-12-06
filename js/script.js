@@ -48,6 +48,7 @@ $(document).ready(function() {
   firsttry = true;
   });
 
+$('#wc').hide();
   var firsttry = true;
   $('#p4').on('click', function() {
   // perfect fourth
@@ -55,12 +56,28 @@ $(document).ready(function() {
         if (firsttry == true) {
         $("#wc").text('Good Job!');
         correct = correct +1;
+        $('#wc').css('color', 'green');
+        $('#wc').clearQueue().fadeIn(100).delay(1000).queue(function(next){
+            $('#wc').fadeOut(100);
+            next();
+        });
+
       } else {
         $("#wc").text('Correct');
+        $('#wc').css('color', 'yellow');
+        $('#wc').clearQueue().fadeIn(100).delay(1000).queue(function(next){
+            $('#wc').fadeOut(100);
+            next();
+        });
       }
     } else {
         $("#wc").text('Try Again!');
         firsttry = false;
+        $('#wc').css('color', 'red');
+        $('#wc').clearQueue().fadeIn(100).delay(1000).queue(function(next){
+            $('#wc').fadeOut(100);
+            next();
+        });
     }
   });
 
@@ -94,11 +111,10 @@ $(document).ready(function() {
     }
   });
 
-$('#item1').addClass('tabmenuhover');
-$('#mode1').hide();
-$('#mode2').hide();
-$('.footer').hide();
-
+  $('#item1').addClass('tabmenuhover');
+  $('#mode1').hide();
+  $('#mode2').hide();
+  $('.footer').hide();
 
   $('#item1').on('click', function() {
       $('#item1').addClass('tabmenuhover');
@@ -131,7 +147,7 @@ $('.footer').hide();
     });
 
 
-    $('#wc').css('left', $(window).width()/2 - 30);
+    $('#wc').css('left', $(window).width()/2 - 80);
     $('#wc').css('top', $('.tabmenu').height() + $('#mode1').height()/2);
 
     $('#p8').css('left', $(window).width()/2 - 20);
