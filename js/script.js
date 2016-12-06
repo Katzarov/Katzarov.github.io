@@ -13,8 +13,10 @@ $(document).ready(function() {
   var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
   if (isTouch) {
     $('body').removeClass('desktop');
+    }
+  } else {
     // on window resize set the new positions of the above elements
-    window.onresize = function(){ location.reload(); }
+    window.onresize = function(){ location.reload();
   }
 
   // some defaults
