@@ -29,10 +29,6 @@ accent pink #FF80AB
 	zoom: 1;
 	}
 
-/*img, iframe, object, embed, video {
-    width: 100%;
-    max-width: 100%;
-}*/
 * {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -70,9 +66,9 @@ body {
 	background: #EAEAEA;
 	}
 
-h1 { font-size: 1.5em; font-family: grbold; line-height: 1.2em; text-align: center;}
-h2 { font-size: 2em; font-family: grbold; line-height: 1.2em; text-align: center; margin-bottom: 0.4em;}
-h3 { font-size: 2.5em; font-family: grbold; line-height: 1.2em; text-align: center;}
+h1 { font-size: 1.5em; color: #444444; font-family: grbold; line-height: 1.2em; text-align: center;}
+h2 { font-size: 2em; color: #444444; font-family: grbold; line-height: 1.2em; text-align: center; margin-bottom: 0.4em;}
+h3 { font-size: 2.5em; color: #444444; font-family: grbold; line-height: 1.2em; text-align: center;}
 
 a,
 a:link,
@@ -136,11 +132,23 @@ a:active {
 
 
 
-#arc {
+.arc {
 	font-size: 3em;
 	font-family: grmedium;
-  color: #212121;
+  color: #444444;
+}
 
+.arc a div {
+	padding: 0.3em;
+	border: 1px #444444 solid;
+  border-radius: 1em;
+	-webkit-border-radius: 1em;
+	-moz-border-radius: 1em;
+}
+
+.desktop .arc a:hover div {
+	transition: background-color 0.2s ease;
+	background-color: white;
 }
 
 #wc {

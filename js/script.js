@@ -1,13 +1,13 @@
 $(document).ready(function() {
 
-  ///////////////////////
-  /* POSITION ELEMENTS */
-  ///////////////////////
 
-  // foooter (tab buttons)
+  //////////////////////////
+  /* GENERAL AND DEFAULTS */
+  //////////////////////////
+
+
+  // position foooter (tab buttons)
   $('#main').css('height', $(window).height() - $('.tabmenu').height() - $('.footer').height());
-  // wrong - correct feedback popup
-
 
   // on window resize set the new positions of the above elements
   window.onresize = function(){ location.reload(); }
@@ -17,6 +17,34 @@ $(document).ready(function() {
   if (isTouch) {
     $('body').removeClass('desktop');
   }
+
+  // some defaults
+  $('#item1').addClass('tabmenuhover');
+  $('.footer').hide();
+  $('#wc').hide();
+
+
+  //////////////
+  /* TAB MENU */
+  //////////////
+
+
+  $('#item1').on('click', function() {
+      $('#item1').addClass('tabmenuhover');
+      $('#item2').removeClass('tabmenuhover');
+      $('#mode1').hide();
+      $('.footer').hide();
+      $('#theory').fadeIn(250);
+    });
+
+  $('#item2').on('click', function() {
+      $('#item2').addClass('tabmenuhover');
+      $('#item1').removeClass('tabmenuhover');
+      $('#theory').hide();
+      $('.footer').fadeIn(250);
+      $('#mode1').fadeIn(250);
+    });
+
 
   ////////////////
   /* MAIN LOGIC */
@@ -80,8 +108,6 @@ $(document).ready(function() {
     firsttry = true;
   }
 
-
-
   // draws the current stats of the game (questions and answers)
   function stats() {
     $('#counter').text('Question: ' + counter + '/50');
@@ -93,9 +119,10 @@ $(document).ready(function() {
   /* ARC BUTTONS */
   /////////////////
 
-  // p4 button
+
   // if the user clicked this button and the interval is right
   // the user gets the appropriate feedback
+  // p4 button
   $('#p4').on('click', function() {
     if (random % 3 == 1) {
         if (firsttry == true) {
@@ -152,38 +179,22 @@ $(document).ready(function() {
   }
 
 
-  $('#item1').addClass('tabmenuhover');
-  $('#mode1').hide();
-  $('.footer').hide();
+  ///////////////////////
+  /* POSITION ELEMENTS */
+  ///////////////////////
 
 
-  $('#item1').on('click', function() {
-      $('#item1').addClass('tabmenuhover');
-      $('#item2').removeClass('tabmenuhover');
-      $('#mode1').hide();
-      $('.footer').hide();
-      $('#theory').fadeIn(250);
-    });
-
-  $('#item2').on('click', function() {
-      $('#item2').addClass('tabmenuhover');
-      $('#item1').removeClass('tabmenuhover');
-      $('#theory').hide();
-      $('.footer').fadeIn(250);
-      $('#mode1').fadeIn(250);
-    });
-
-
-    $('#wc').css('left', $(window).width()/2 - 80);
-    $('#wc').css('top', $('.tabmenu').height() + $('#mode1').height()/2);
-    // p8 button
-    $('#p8').css('left', $(window).width()/2 - 20);
-    $('#p8').css('top', $('.tabmenu').height() + 60);
-    // p4 button
-    $('#p4').css('left', $(window).width()/2 + 100);
-    $('#p4').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
-    // p5 button
-    $('#p5').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
-    $('#p5').css('left', $(window).width()/2 - 120);
+  // wrong - correct feedback popup
+  $('#wc').css('left', $(window).width()/2 - 80);
+  $('#wc').css('top', $('.tabmenu').height() + $('#mode1').height()/2);
+  // p8 button
+  $('#p8').css('left', $(window).width()/2 - 20);
+  $('#p8').css('top', $('.tabmenu').height() + 60);
+  // p4 button
+  $('#p4').css('left', $(window).width()/2 + 100);
+  $('#p4').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
+  // p5 button
+  $('#p5').css('top', $('.tabmenu').height() + $('#mode1').height() - 90);
+  $('#p5').css('left', $(window).width()/2 - 120);
 
 });
